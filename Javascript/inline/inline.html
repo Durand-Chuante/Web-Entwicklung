@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>JavaScript inline</title>
+        <style type="text/css">
+        
+            .cercle{
+                height: 200px;
+                width: 200px;
+                float: left;
+                border-radius: 100px;
+                margin-left: 10px;
+            }
+            #couleurvert{
+                background-color: green;
+            }
+            #couleurrouge{
+                background-color: red;
+            }
+            #couleurjaune{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="cercle" id="couleurvert">
+            
+        </div>
+         <div class="cercle" id="couleurrouge">
+            
+        </div>
+         <div class="cercle" id="couleurjaune">
+            
+        </div>
+        <button id="monbouton">click ici</button>
+        <script type="text/javascript">
+        
+            document.getElementById("couleurvert").onclick = function(){
+                document.getElementById("couleurvert").style.display = "none";
+            }
+            document.getElementById("couleurrouge").onclick = function() {
+                document.getElementById("couleurrouge").style.display = "none";
+            }
+            document.getElementById("couleurjaune").onclick =  function(){
+                document.getElementById("couleurjaune").style.display = "none";
+            }
+            document.getElementById("monbouton").onclick = function() {
+                document.getElementById("couleurrouge").style.display = "inline";
+                document.getElementById("couleurvert").style.display = "inline";
+                document.getElementById("couleurjaune").style.display = "inline";
+            }
+           
+        </script>
+    </body>
+</html>

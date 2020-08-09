@@ -1,0 +1,111 @@
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Reactionstester</title>
+        
+        <style type="text/css">
+        
+            #form{
+                width: 200px;
+                height: 200px;
+                background-color: yellow;
+                display: "none";
+                position: relative;
+            }
+        
+        </style>
+    </head>
+    <body>
+        
+        <h1>Reaction tester</h1>
+        <p>click of the square or of the Circle</p>
+        <p>Your Time: <span id="time"></span></p>
+        <p>Best Time: <span id="best"></span></p>
+        <div id="form"></div>
+        <script type="text/javascript">
+            
+            let start = new Date().getTime();
+            
+            function random_bg_color() {
+                var x = Math.floor(Math.random() * 256);
+                var y = Math.floor(Math.random() * 256);
+                var z = Math.floor(Math.random() * 256);
+                var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+                console.log(bgColor);
+  
+                document.body.style.background = bgColor;
+            }
+             function random_color() {
+                var x = Math.floor(Math.random() * 256);
+                var y = Math.floor(Math.random() * 256);
+                var z = Math.floor(Math.random() * 256);
+                var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+                return bgColor;
+            }
+            
+            function makeShapeAppear(){
+                var top = Math.random()*600;
+                
+                var left = Math.random()*900;
+                
+                var width = Math.random()*200;
+                
+                if(Math.random()>0.5){
+                    document.getElementById("form").style.borderRadius = "50%";
+                }
+                else{
+                    document.getElementById("form").style.borderRadius = "0";
+                }
+                
+                document.getElementById("form").style.backgroundColor = random_bg_color();
+                document.getElementById("form").style.backgroundColor = random_color();
+                document.getElementById("form").style.top = top + "px";
+                document.getElementById("form").style.left = left + "px";
+                
+                document.getElementById("form").style.width = width + "px";
+                
+                document.getElementById("form").style.height = width + "px";
+                
+                document.getElementById("form").style.display = "block";
+                
+                start = new Date().getTime();
+            }
+            function appearAfterDelay(){
+                setTimeout(makeShapeAppear, Math.random()*2000);
+            }
+            
+            appearAfterDelay();
+        
+            document.getElementById("form").onclick = function(){
+                document.getElementById("form").style.display = "none"; 
+                
+                let end = new Date().getTime();
+                
+                let bestTime;
+                
+                duration = (end - start)/1000;
+                var time = 1;
+                document.getElementById("time").innerHTML = duration + "s";
+                //alert(duration);
+                
+                if(time < duration){
+                    
+                    document.getElementById("best").innerHTML = time + "s";
+                }
+                else{
+                    
+                    document.getElementById("best").innerHTML = duration + "s";
+                }
+                
+                appearAfterDelay();
+            }
+          
+        
+        
+        </script>
+    
+    
+    </body>
+</html>

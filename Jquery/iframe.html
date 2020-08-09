@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Iframe mit Jquery</title>
+    
+        <style type="text/css">
+            
+            #kreis{
+                height: 100px;
+                width: 100px;
+                background-color: red;
+                border-style: solid;
+                border-color: green;
+                border-radius: 50%;
+            }
+             .viereck{
+                height: 100px;
+                width: 100px;
+                background-color: red;
+                border-style: solid;
+                border-color: green;
+                margin-top: 10px;
+            }
+        
+        </style>
+        <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        
+        <div id="kreis"></div>
+        <div class="viereck"></div>
+        <div class="viereck"></div>
+    
+        
+        <script type="text/javascript">
+        
+            $("div").click (function(){
+                if($(this).attr("id")){
+                    alert("Kreis wurde angeklickt!");
+                }else{
+                    alert("viereck wurde angeklickt!");
+                }
+                
+            });
+            
+        </script>
+        
+    
+    
+    </body>
+    
+
+</html>
